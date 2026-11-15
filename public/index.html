@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0b0714">
+<title>Wick &amp; Ruin</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<div id="hud">
+  <div id="feed"></div>
+
+  <div id="board">
+    <div id="goal">First to 13 souls</div>
+    <div id="rows"></div>
+  </div>
+
+  <div id="snuffwarn" class="hidden">THE SNUFFER HUNTS YOU</div>
+  <div id="puddle" class="hidden"></div>
+
+  <div id="round" class="hidden">
+    <div id="roundwin"></div>
+    <div id="roundnext"></div>
+  </div>
+
+  <div id="bars">
+    <div id="flamebar"><div id="flamefill"></div><div id="flamelabel">70</div></div>
+    <div id="dashbar"><div id="dashfill"></div><span id="dashlabel">GUST</span></div>
+  </div>
+
+  <div id="conn" class="hidden">The wind blew out your connection&hellip; reconnecting</div>
+</div>
+
+<div id="join">
+  <form id="joinform" autocomplete="off">
+    <svg class="candle" viewBox="0 0 60 90" aria-hidden="true">
+      <defs>
+        <radialGradient id="fg" cx="50%" cy="60%" r="60%">
+          <stop offset="0" stop-color="#fff6c8"/><stop offset="0.5" stop-color="#f5c15a"/><stop offset="1" stop-color="#d9622b"/>
+        </radialGradient>
+      </defs>
+      <path class="flame" d="M30 4 C42 20 46 30 40 40 C37 46 23 46 20 40 C14 30 18 20 30 4Z" fill="url(#fg)"/>
+      <rect x="29" y="40" width="2" height="8" fill="#2a1a2e"/>
+      <path d="M18 48 H42 V80 Q42 86 36 86 H24 Q18 86 18 80Z" fill="#efe3c4"/>
+      <path d="M18 48 H42 V54 Q38 60 36 54 Q33 64 29 56 Q25 62 22 55 Q19 56 18 54Z" fill="#fff6dc"/>
+    </svg>
+    <h1 id="title">WICK &amp; RUIN</h1>
+    <p class="tag">Burn bright. Die drippy.</p>
+    <ul class="how">
+      <li><b>WASD</b> move &middot; <b>mouse</b> aim &middot; <b>click</b> spit embers (costs flame) &middot; <b>Space</b> gust-dash</li>
+      <li>Eat wax to grow. Your flame is your life <em>and</em> your light.</li>
+      <li>Beware <b>THE SNUFFER</b>, it hunts the brightest. First to 13 souls wins.</li>
+    </ul>
+    <input id="name" type="text" maxlength="16" placeholder="name your candle" spellcheck="false" autocapitalize="off">
+    <button id="go" type="submit">Light the wick</button>
+  </form>
+</div>
+
+<script type="module" src="/main.js"></script>
+</body>
+</html>
